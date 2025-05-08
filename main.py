@@ -7,7 +7,7 @@ def calculate():
             break
         check_items = []
         for i in input_calculate:
-            if i.isnumeric() or i in (" ", "+", "-", "*", "/", "//", "%", "**"):
+            if i.isnumeric() or i in (" ", "(", ")", "+", "-", "*", "/", "//", "%", "**"):
                 check_items.append(True)
             else:
                 check_items.append(False)
