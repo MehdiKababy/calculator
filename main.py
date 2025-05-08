@@ -1,17 +1,22 @@
-print("Welcome to Calculator")
-while True:
-    number_Operator = input("Enter mathematical calculations (To Exit, Write exit) : ")
-    if number_Operator in ("exit", "exit()", "Exit", "Exit()"):
-        print("Calculator Task Finished")
-        break
-    check_Numbers = number_Operator.split()
-    after_Check = []
-    for i in check_Numbers:
-        if i.isnumeric() or i in ("+", "-", "*", "/", "//", "%", "**"):
-            after_Check.append(i)
-    if after_Check == check_Numbers and len(check_Numbers) >= 3:
-        result = eval(number_Operator)
-        print(result)
-    else:
-        print("Input must be a number and an operator")
-        print("Try again")
+def calculate():
+    while True:
+        input_calculate = input(
+            "Enter mathematical calculations (To Exit, Type Exit) : "
+        )
+        if input_calculate.title() in ("Exit", "Leave"):
+            break
+        check_items = []
+        for i in input_calculate:
+            if i.isnumeric() or i in (" ", "+", "-", "*", "/", "//", "%", "**"):
+                check_items.append(True)
+            else:
+                check_items.append(False)
+        if all(check_items):
+            print(eval(input_calculate))
+        else:
+            print("The math operation is wrong")
+
+
+if __name__ == "__main__":
+    print("Welcome to Calculator")
+    calculate()
