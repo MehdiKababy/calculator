@@ -1,1 +1,1 @@
-# Calculator | ماشین حساب
+# ماشین حساب | Calculator
